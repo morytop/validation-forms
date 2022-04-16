@@ -67,10 +67,10 @@ const checkRequiredFields = (inputArr) => {
     });
 }
 
-const checkLenght = (input, min, max) => {
-    if (input.value.lenght < min) {
+const checkLength = (input, min, max) => {
+    if (input.value.length < min) {
         error(input, `${input.id} must be at least ${min} characters`); 
-    }else if (input.value.lenght > max) {
+    }else if (input.value.length > max) {
         error(input, `${input.id} must be less than ${max} characters`)
     }else {
         success(input);
@@ -88,8 +88,8 @@ form.addEventListener('submit', (e) => {
 
     if (form.classList[1] === 'sign-up') {
     checkRequiredFields([username, email, password, password2]);
-    checkLenght(username, 2, 15);
-    checkLenght(password, 5, 25);
+    checkLength(username, 2, 15);
+    checkLength(password, 5, 25);
     passwordMatch(password, password2);
     }else {
         checkRequiredFields([email, password]);
